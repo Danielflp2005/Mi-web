@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0;
+    padding: 20px;
+    color: white;
+}
+
+p{
+    color: white;
+}
+
+li, ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+nav ul{
+
+}
+
+body{
+    background-image:url(../imagenes/espresso-surrounded-by-scattered-coffee-beans-dark-surface\ 1.jpg) ;
+}
