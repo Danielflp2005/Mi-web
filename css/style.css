@@ -1,35 +1,237 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* =========================================
+           1. ESTILOS GENERALES Y HERO SECTION
+           ========================================= */
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  overflow-x: hidden; /* Evita scroll horizontal indeseado en móvil */
 }
 
-header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 0;
-    padding: 20px;
-    color: white;
+.hero-section {
+  /* REEMPLAZA CON TU IMAGEN DE FONDO PRINCIPAL */
+  background-image: url("/imagenes/espresso-surrounded-by-scattered-coffee-beans-dark-surface\ 1.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  position: relative;
 }
 
-p{
-    color: white;
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.4
+  ); /* Un poco más oscuro para legibilidad */
+  z-index: 1;
 }
 
-li, ul{
-    list-style: none;
+.hero-content-wrapper {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh; /* Asegura que cubra la pantalla */
 }
 
-a{
-    text-decoration: none;
-    color: white;
+/* Tipografía Hero */
+.cafe-brand {
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+.nav-link {
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+.hero-subtitle {
+  font-weight: 700;
+  letter-spacing: 2px;
 }
 
-nav ul{
-
+.hero-title {
+  font-weight: 900;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  /* Tamaño de fuente responsivo: más pequeño en móvil */
+  font-size: 2.5rem;
 }
 
-body{
-    background-image:url(../imagenes/espresso-surrounded-by-scattered-coffee-beans-dark-surface\ 1.jpg) ;
+/* Ajuste para pantallas grandes */
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 3.5rem;
+  }
+}
+
+.btn-search-custom {
+  background-color: white;
+  color: black;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+/* =========================================
+           2. ESTILOS DEL MENÚ DESPLEGABLE (DROPDOWN)
+           ========================================= */
+.dropdown-menu-dark-custom {
+  background-color: rgba(0, 0, 0, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  margin-top: 0;
+  border-radius: 10px;
+}
+
+.dropdown-item {
+  color: #ccc;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  transition: all 0.3s;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  padding-left: 25px; /* Pequeño desplazamiento a la derecha */
+}
+
+/* LÓGICA HOVER: Solo activa el menú al pasar el ratón en pantallas grandes (Desktop) */
+@media (min-width: 992px) {
+  .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    animation: fadeInUp 0.3s ease;
+  }
+  .nav-item.dropdown:hover .nav-link {
+    color: #fff; /* Resaltar el enlace padre */
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+           3. ESTILOS SECCIÓN PRODUCTOS (RESPONSIVE)
+           ========================================= */
+.products-section-bg {
+  background-image: url(/imagenes/posiblefpndo.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Parallax (fijo en escritorio) */
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+/* En móvil quitamos el fixed background porque a veces da problemas de rendimiento */
+@media (max-width: 768px) {
+  .products-section-bg {
+    background-attachment: scroll;
+  }
+}
+
+.glass-card {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  /* Padding responsivo: menos relleno en móvil */
+  padding: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .glass-card {
+    padding: 3rem;
+    border-radius: 30px;
+  }
+}
+
+.glass-card-grid {
+  padding: 2rem;
+  height: 100%;
+}
+
+.product-title {
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+.product-desc {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+/* Imágenes responsivas */
+.img-product-round {
+  border-radius: 50%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+}
+.img-product-rounded-rect {
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  max-width: 280px;
+  width: 100%;
+  height: auto;
+}
+
+/* =========================================
+           4. FOOTER
+           ========================================= */
+.footer-custom {
+  background-color: #1a1a1a;
+  color: #888;
+  font-size: 0.8rem;
+  padding: 2rem 0;
+}
+.social-icon {
+  font-size: 1.3rem;
+  margin: 0 10px;
+  transition: transform 0.3s;
+}
+.social-icon:hover {
+  transform: scale(1.1);
+}
+
+.footer-links a {
+  color: #888;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  display: inline-block;
+}
+/* En móvil, los enlaces del footer un poco más separados verticalmente */
+@media (max-width: 768px) {
+  .footer-links a {
+    margin: 5px 10px;
+  }
+}
+
+/* Colores redes */
+.bi-instagram {
+  color: #e1306c;
+}
+.bi-twitter-x {
+  color: #fff;
+}
+.bi-youtube {
+  color: #ff0000;
 }
