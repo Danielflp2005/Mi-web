@@ -128,7 +128,7 @@ body {
            3. ESTILOS SECCIÓN PRODUCTOS (RESPONSIVE)
            ========================================= */
 .products-section-bg {
-  background-image: url(/imagenes/posiblefpndo.jpg);
+  background-image: url(../imagenes/posiblefpndo.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed; /* Parallax (fijo en escritorio) */
