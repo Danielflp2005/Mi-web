@@ -1,0 +1,166 @@
+/* --- ESTILOS GENERALES --- */
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #1a1a1a;
+}
+
+/* --- FONDO PIZARRA (FIXED) --- */
+.about-section {
+  /* REEMPLAZA CON TU IMAGEN REAL */
+  background-image: url("fondo-pizarra.jpg");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Efecto Parallax: el fondo se queda quieto al bajar */
+  min-height: 100vh;
+  padding-bottom: 4rem;
+}
+
+/* --- NAVBAR TIPO CÁPSULA --- */
+.navbar-capsule-container {
+  padding-top: 2rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.navbar-capsule {
+  background-color: rgba(80, 80, 80, 0.4); /* Gris transparente */
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+  padding: 0.5rem 2rem;
+  width: 90%;
+  max-width: 900px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-brand {
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+}
+.nav-link {
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.9) !important;
+  text-transform: uppercase;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: #fff !important;
+}
+
+/* --- MENÚ DESPLEGABLE (Igual al home) --- */
+.dropdown-menu-dark-custom {
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  margin-top: 15px;
+  border-radius: 15px;
+}
+.dropdown-item {
+  color: #ccc;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  transition: 0.3s;
+}
+.dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding-left: 25px;
+}
+
+/* Hover Dropdown en Desktop */
+@media (min-width: 992px) {
+  .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    animation: fadeIn 0.3s ease;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- ESTILOS DEL CONTENIDO EN ESCALERA --- */
+.stair-step {
+  margin-bottom: 4rem; /* Espacio entre escalones */
+}
+
+/* Caja de texto transparente para que se lea sobre los dibujos */
+.text-glass-box {
+  background: rgba(0, 0, 0, 0.6); /* Fondo negro al 60% */
+  backdrop-filter: blur(4px); /* Pequeño desenfoque detrás */
+  padding: 2.5rem;
+  border-radius: 20px; /* Bordes redondeados */
+  border-left: 3px solid #d4a373; /* Detalle de color café a la izquierda */
+  color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.text-glass-box:hover {
+  transform: translateY(-5px); /* Pequeña animación al pasar el ratón */
+  border-left: 3px solid #fff;
+}
+
+.question-title {
+  font-size: 1.3rem;
+  font-weight: 300;
+  letter-spacing: 3px;
+  color: #d4a373; /* Color crema/café claro para los títulos */
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.answer-text {
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.8; /* Más espaciado entre líneas para leer mejor */
+  font-style: italic;
+  opacity: 0.95;
+  text-align: justify;
+}
+
+/* --- FOOTER --- */
+.footer-custom {
+  background-color: #1a1a1a;
+  color: #888;
+  font-size: 0.8rem;
+  padding: 2rem 0;
+  border-top: 1px solid #333;
+}
+.footer-links a {
+  color: #888;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  transition: color 0.3s;
+}
+.footer-links a:hover {
+  color: white;
+}
+.social-icon {
+  font-size: 1.2rem;
+  margin: 0 10px;
+  transition: transform 0.3s;
+}
+.social-icon:hover {
+  transform: scale(1.1);
+}
+.bi-instagram {
+  color: #e1306c;
+}
+.bi-twitter-x {
+  color: #fff;
+}
+.bi-youtube {
+  color: #ff0000;
+}
