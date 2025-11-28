@@ -12,7 +12,7 @@ html {
 
 /* --- COLUMNA IZQUIERDA (FOTO) --- */
 .left-panel {
-  background-image: url("fondo-relax.jpg");
+  background-image: url("../imagenes/formulario.jpg");
   background-size: cover;
   background-position: center;
   position: relative;
