@@ -15,88 +15,83 @@
     <link rel="stylesheet" href="css/contactanos.css" />
   </head>
   <body>
-    <div class="container-fluid main-wrapper">
+    <div class="container-fluid main-wrapper p-0">
       <div class="row g-0">
-        <div class="col-lg-5 left-panel">
+        <div class="col-lg-5 d-none d-lg-block left-panel">
           <div class="left-overlay"></div>
-          <a href="index.html" class="brand-logo">CAFE AROMA</a>
+          <a href="index.html" class="brand-logo-desktop">CAFE AROMA</a>
         </div>
 
-        <div class="col-lg-7 right-panel">
-          <div class="top-nav d-flex justify-content-end align-items-center">
-            <a href="index.html" class="nav-link-custom">Home</a>
-            <div class="dropdown d-inline-block">
-              <a
-                href="#"
-                class="nav-link-custom dropdown-toggle"
-                data-bs-toggle="dropdown"
-                >Menu</a
-              >
-              <ul class="dropdown-menu dropdown-menu-dark mt-2">
-                <li><a class="dropdown-item small" href="#">Cafés</a></li>
-                <li><a class="dropdown-item small" href="#">Postres</a></li>
-              </ul>
-            </div>
-            <a href="sobre_nosotros.html" class="nav-link-custom"
-              >Sobre Nosotros</a
-            >
-            <a href="#" class="nav-link-custom active">Contactanos</a>
-
-            <a
-              href="#"
-              class="ms-4 bg-white text-black rounded-circle d-flex justify-content-center align-items-center text-decoration-none"
-              style="width: 35px; height: 35px"
-            >
-              <i class="bi bi-search fw-bold small"></i>
-            </a>
-          </div>
-
-          <div class="d-lg-none text-end p-3">
-            <button
-              class="btn btn-outline-light border-0"
-              type="button"
-              data-bs-toggle="offcanvas"
-              data-bs-target="#mobileMenu"
-            >
-              <i class="bi bi-list fs-1"></i>
-            </button>
-          </div>
-
-          <div
-            class="offcanvas offcanvas-end text-bg-dark"
-            tabindex="-1"
-            id="mobileMenu"
+        <div class="col-lg-7 col-12 right-panel">
+          <nav
+            class="navbar navbar-expand-lg navbar-dark navbar-custom pt-4 px-4"
           >
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title fst-italic">CAFE AROMA</h5>
+            <div class="container-fluid">
+              <a
+                class="navbar-brand navbar-brand-mobile d-lg-none"
+                href="index.html"
+                >CAFE AROMA</a
+              >
+
               <button
+                class="navbar-toggler border-0"
                 type="button"
-                class="btn-close btn-close-white"
-                data-bs-dismiss="offcanvas"
-              ></button>
+                data-bs-toggle="collapse"
+                data-bs-target="#mainNav"
+              >
+                <i class="bi bi-list fs-1"></i>
+              </button>
+
+              <div
+                class="collapse navbar-collapse justify-content-end"
+                id="mainNav"
+              >
+                <ul
+                  class="navbar-nav align-items-center text-center mt-3 mt-lg-0"
+                >
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                  </li>
+
+                  <li class="nav-item dropdown">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      >Menu</a
+                    >
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                      <li><a class="dropdown-item" href="#">Cafés</a></li>
+                      <li><a class="dropdown-item" href="#">Postres</a></li>
+                    </ul>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="sobre_nosotros.html"
+                      >Sobre Nosotros</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#">Contactanos</a>
+                  </li>
+
+                  <li class="nav-item mt-3 mt-lg-0 ms-lg-3">
+                    <a
+                      href="#"
+                      class="d-inline-flex justify-content-center align-items-center bg-white text-black rounded-circle text-decoration-none"
+                      style="width: 35px; height: 35px"
+                    >
+                      <i class="bi bi-search fw-bold small"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div class="offcanvas-body">
-              <ul class="nav flex-column text-uppercase fw-bold">
-                <li class="nav-item mb-3">
-                  <a href="index.html" class="nav-link text-white">Home</a>
-                </li>
-                <li class="nav-item mb-3">
-                  <a href="#" class="nav-link text-white">Menu</a>
-                </li>
-                <li class="nav-item mb-3">
-                  <a href="sobre_nosotros.html" class="nav-link text-white"
-                    >Sobre Nosotros</a
-                  >
-                </li>
-                <li class="nav-item mb-3">
-                  <a href="#" class="nav-link text-warning">Contactanos</a>
-                </li>
-              </ul>
-            </div>
-          </div>
+          </nav>
 
           <div
-            class="d-flex flex-grow-1 align-items-center justify-content-center"
+            class="flex-grow-1 d-flex align-items-center justify-content-center px-3"
           >
             <div class="form-card">
               <form>
@@ -114,7 +109,6 @@
                     />
                   </div>
                 </div>
-
                 <div class="row mb-3 align-items-center">
                   <label
                     for="apellidos"
@@ -129,7 +123,6 @@
                     />
                   </div>
                 </div>
-
                 <div class="row mb-3 align-items-center">
                   <label
                     for="correo"
@@ -144,8 +137,7 @@
                     />
                   </div>
                 </div>
-
-                <div class="row mb-4">
+                <div class="row mb-3">
                   <label
                     for="mensaje"
                     class="col-sm-3 form-label-custom text-sm-end pt-2"
@@ -153,18 +145,15 @@
                   >
                   <div class="col-sm-9">
                     <textarea
-                      class="form-control form-control-pill form-control-area"
-                      id="mensaje"
+                      class="form-control form-control-pill"
                       rows="3"
+                      style="border-radius: 20px"
                     ></textarea>
                   </div>
                 </div>
-
                 <div class="row">
                   <div class="col-sm-9 offset-sm-3">
-                    <button type="submit" class="btn-submit shadow-sm">
-                      Enviar Mensaje
-                    </button>
+                    <button type="submit" class="btn-submit">Enviar</button>
                   </div>
                 </div>
               </form>
@@ -176,33 +165,33 @@
               <div class="col-md-4 mb-2 mb-md-0 fw-bold fst-italic">
                 @ 2025 CAFE AROMA
               </div>
-              <div class="col-md-4 text-center mb-2 mb-md-0">
-                <a href="#" class="social-icon"
+              <div class="col-md-4 mb-2 mb-md-0">
+                <a
+                  href="#"
+                  class="text-decoration-none text-secondary mx-2 fs-5"
                   ><i class="bi bi-instagram"></i
                 ></a>
-                <a href="#" class="social-icon"
+                <a
+                  href="#"
+                  class="text-decoration-none text-secondary mx-2 fs-5"
                   ><i class="bi bi-twitter"></i
                 ></a>
-                <a href="#" class="social-icon"
+                <a
+                  href="#"
+                  class="text-decoration-none text-secondary mx-2 fs-5"
                   ><i class="bi bi-youtube"></i
                 ></a>
               </div>
-              <div class="col-md-4 text-end footer-links-col fst-italic">
+              <div class="col-md-4 d-none d-md-block text-end fst-italic">
                 <a
                   href="index.html"
-                  class="text-decoration-none text-secondary ms-3"
+                  class="text-decoration-none text-secondary ms-2"
                   >HOME</a
-                >
-                <a href="#" class="text-decoration-none text-secondary ms-3"
-                  >MENU</a
                 >
                 <a
                   href="sobre_nosotros.html"
-                  class="text-decoration-none text-secondary ms-3"
+                  class="text-decoration-none text-secondary ms-2"
                   >SOBRE NOSOTROS</a
-                >
-                <a href="#" class="text-decoration-none text-white ms-3"
-                  >CONTACTANOS</a
                 >
               </div>
             </div>

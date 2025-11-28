@@ -1,38 +1,34 @@
-/* --- CONFIGURACIÓN GENERAL --- */
 body,
 html {
   height: 100%;
   margin: 0;
   font-family: system-ui, -apple-system, sans-serif;
-  background-color: #1a1a1a;
+  background-color: #1b1918; /* Fondo oscuro total */
 }
 
 .main-wrapper {
   min-height: 100vh;
-  overflow-x: hidden;
 }
 
-/* --- COLUMNA IZQUIERDA (IMAGEN) --- */
+/* --- COLUMNA IZQUIERDA (FOTO) --- */
 .left-panel {
-  /* TU IMAGEN VERTICAL AQUÍ */
-  background-image: url("../imagenes/formulario.jpg");
+  background-image: url("fondo-relax.jpg");
   background-size: cover;
   background-position: center;
   position: relative;
-  min-height: 100vh; /* Ocupa toda la altura en PC */
+  min-height: 100vh;
 }
 
-/* Overlay oscuro sutil sobre la imagen para que el Logo resalte */
+/* Overlay y Logo Grande (Solo Desktop) */
 .left-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent);
 }
-
-.brand-logo {
+.brand-logo-desktop {
   position: absolute;
   top: 40px;
   left: 40px;
@@ -42,153 +38,106 @@ html {
   text-transform: uppercase;
   font-size: 1.5rem;
   text-decoration: none;
-  letter-spacing: 1px;
   z-index: 10;
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 /* --- COLUMNA DERECHA (CONTENIDO) --- */
 .right-panel {
-  background-color: #1b1918; /* Color Café muy oscuro (casi negro) */
+  background-color: #1b1918;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Distribuye espacio entre Nav, Form y Footer */
   min-height: 100vh;
 }
 
-/* Navbar superior derecha */
-.top-nav {
-  padding-top: 2.5rem;
-  padding-right: 3rem;
-}
-.nav-link-custom {
+/* --- NAVBAR MEJORADO (RESPONSIVE) --- */
+/* Ajustes para que los enlaces se vean bien */
+.navbar-custom .nav-link {
   color: rgba(255, 255, 255, 0.7);
   text-transform: uppercase;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  letter-spacing: 1px;
-  text-decoration: none;
-  margin-left: 2rem;
-  transition: color 0.3s;
+  margin-left: 1rem;
+  transition: 0.3s;
 }
-.nav-link-custom:hover,
-.nav-link-custom.active {
+.navbar-custom .nav-link:hover,
+.navbar-custom .nav-link.active {
   color: white;
 }
-
-/* --- TARJETA DEL FORMULARIO (MEJORADA) --- */
-.form-card {
-  background-color: #dcdcdc; /* Gris claro de la imagen */
-  border-radius: 40px;
-  padding: 3.5rem;
-  width: 100%;
-  max-width: 550px; /* Ancho controlado */
-  margin: 2rem auto; /* Centrado horizontal */
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5); /* Sombra elegante para dar profundidad */
+/* Logo Móvil (Solo visible cuando se oculta la columna izquierda) */
+.navbar-brand-mobile {
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: 1px;
 }
 
-/* Etiquetas (Labels) */
+/* --- TARJETA FORMULARIO --- */
+.form-card {
+  background-color: #dcdcdc;
+  border-radius: 30px;
+  padding: 3rem;
+  width: 100%;
+  max-width: 550px;
+  margin: 0 auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
 .form-label-custom {
-  /* CAMBIO CLAVE: Color oscuro para que se lea bien sobre gris claro */
-  color: #4a4a4a;
+  color: #333; /* Texto oscuro para leerse bien sobre gris */
   font-weight: 800;
   font-style: italic;
   text-transform: uppercase;
-  font-size: 0.85rem;
-  letter-spacing: 1px;
-  margin-bottom: 0; /* Alineación con el input */
-  padding-top: 10px; /* Ajuste visual vertical */
+  font-size: 0.8rem;
+  margin-bottom: 0;
+  padding-top: 8px;
 }
 
-/* Inputs (Campos de texto) */
 .form-control-pill {
   border-radius: 50px;
-  border: 2px solid transparent; /* Sin borde visible inicial */
-  padding: 0.7rem 1.5rem;
-  font-size: 1rem;
-  transition: all 0.3s;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid transparent;
+  padding: 0.6rem 1.2rem;
 }
-
 .form-control-pill:focus {
-  box-shadow: 0 0 0 4px rgba(212, 163, 115, 0.3); /* Brillo color café al escribir */
-  border-color: #d4a373;
+  box-shadow: 0 0 0 3px rgba(212, 163, 115, 0.4);
   outline: none;
 }
 
-/* Textarea (Mensaje) */
-.form-control-area {
-  border-radius: 25px;
-}
-
-/* Botón Enviar (Nuevo elemento) */
 .btn-submit {
-  background-color: #1b1918; /* Mismo oscuro del fondo */
+  background-color: #1b1918;
   color: white;
   border-radius: 50px;
-  padding: 10px 40px;
+  padding: 12px;
+  width: 100%;
+  border: none;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  border: none;
-  transition: transform 0.2s, background-color 0.3s;
   margin-top: 1rem;
-  width: 100%; /* Botón ancho */
+  transition: 0.3s;
 }
-
 .btn-submit:hover {
-  background-color: #d4a373; /* Color dorado/café al pasar el ratón */
-  color: #1b1918;
-  transform: translateY(-2px);
-  cursor: pointer;
+  background-color: #d4a373;
+  color: black;
 }
 
 /* --- FOOTER --- */
 .footer-minimal {
   border-top: 1px solid #333;
-  padding: 1.5rem 3rem;
+  padding: 1.5rem;
   color: #666;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
-}
-.social-icon {
-  font-size: 1.2rem;
-  color: #888;
-  margin: 0 8px;
-  transition: 0.3s;
-}
-.social-icon:hover {
-  color: white;
-  transform: scale(1.1);
+  text-align: center;
 }
 
-/* --- RESPONSIVE (MÓVIL) --- */
-@media (max-width: 992px) {
-  .left-panel {
-    min-height: 350px; /* En móvil es solo una cabecera */
-    height: 350px;
-  }
-  .right-panel {
-    min-height: auto; /* Altura automática */
-  }
-  .top-nav {
-    padding: 1.5rem;
-    text-align: center;
-    display: none; /* Ocultamos el nav de escritorio en móvil */
-  }
+/* AJUSTES MÓVIL ESPECÍFICOS */
+@media (max-width: 991px) {
   .form-card {
     padding: 2rem;
-    border-radius: 30px;
-    margin: -50px auto 2rem auto; /* Sube la tarjeta sobre la foto un poco */
-    position: relative;
-    z-index: 20;
-    width: 90%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 20px;
   }
-  .footer-minimal {
-    padding: 1.5rem;
-    text-align: center;
-  }
-  .footer-links-col {
-    display: none; /* Simplificamos footer en móvil */
+  .right-panel {
+    padding-bottom: 0;
   }
 }
