@@ -1,6 +1,6 @@
 body {
-  background-color: #1a1a1a; /* Fondo oscuro marca de la casa */
-  color: #ddd; /* Texto gris claro para leer bien */
+  background-color: #1a1a1a; 
+  color: #ddd; 
   font-family: system-ui, -apple-system, sans-serif;
   padding-bottom: 3rem;
 }
@@ -9,7 +9,7 @@ body {
   max-width: 800px;
   margin: 3rem auto;
   padding: 2rem;
-  background-color: #252525; /* Un poco más claro que el fondo */
+  background-color: #252525; 
   border-radius: 15px;
   border: 1px solid #333;
 }
